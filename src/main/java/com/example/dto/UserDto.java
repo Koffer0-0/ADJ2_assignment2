@@ -1,6 +1,7 @@
 package com.example.dto;
 
 public class UserDto {
+
     private String username;
     private String password;
 
@@ -24,4 +25,5 @@ public class UserDto {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

@@ -10,6 +10,7 @@ import java.util.UUID;
 
 @MappedSuperclass
 public class Abstract {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id = UUID.randomUUID();

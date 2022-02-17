@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface PostRepository extends JpaRepository<Post, Long> {
+
     List<Post> findPostsByPostAuthorUsernameOrderByCreatedDateDesc(String postAuthor_username);
     Post findById(UUID id);
 
@@ -15,4 +16,5 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     List<Post> findPostsByPostVisibilityGreaterThanEqual(VisibilityEnum postVisibility);
 
     List<Post> findPostsByPostAuthorUsername(String postAuthor_username);
+
 }

@@ -3,6 +3,7 @@ package com.example.dto;
 import java.util.UUID;
 
 public class PostCommentDto {
+
     private UUID postId;
     private String commentText;
 
@@ -29,4 +30,5 @@ public class PostCommentDto {
     public void setCommentText(String commentText) {
         this.commentText = commentText;
     }
+
 }

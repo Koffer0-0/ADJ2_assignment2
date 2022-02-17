@@ -88,4 +88,5 @@ public class Post extends Abstract {
                 ", postVisibility=" + postVisibility +
                 '}';
     }
+
 }

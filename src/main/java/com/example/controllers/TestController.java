@@ -8,6 +8,7 @@ import java.util.Map;
 
 @RestController
 public class TestController {
+
     @GetMapping("/getJson")
     public Map<String, String> getJson(){
         HashMap<String, String> map = new HashMap<>();
@@ -16,4 +17,5 @@ public class TestController {
         map.put("aa", "bb");
         return map;
     }
+
 }

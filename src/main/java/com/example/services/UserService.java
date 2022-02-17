@@ -89,4 +89,5 @@ public class UserService {
         System.out.println("Changed page visibility of " + username + " to " + pageVisibility);
         user.setPageVisibility(pageVisibility);
     }
+
 }

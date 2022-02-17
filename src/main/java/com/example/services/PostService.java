@@ -85,4 +85,5 @@ public class PostService {
         }
         post.setCommentsEnabled(commentsEnabled);
     }
+
 }

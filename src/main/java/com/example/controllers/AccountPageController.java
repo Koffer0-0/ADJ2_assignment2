@@ -54,7 +54,7 @@ public class AccountPageController {
         return "index";
     }
 
-@GetMapping("/add-post")
+    @GetMapping("/add-post")
     public String addPost(){
         return "add-post";
     }

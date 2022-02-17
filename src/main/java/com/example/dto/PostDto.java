@@ -3,6 +3,7 @@ package com.example.dto;
 import com.example.models.VisibilityEnum;
 
 public class PostDto {
+
     private String postTitle;
     private String postText;
     private VisibilityEnum postVisibility;
@@ -72,4 +73,5 @@ public class PostDto {
     public void setPostVisibility(VisibilityEnum postVisibility) {
         this.postVisibility = postVisibility;
     }
+
 }

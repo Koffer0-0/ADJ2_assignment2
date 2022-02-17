@@ -11,4 +11,5 @@ public class LogbookConfiguration {
     public Logbook logbook() {
         return Logbook.create();
     }
+
 }

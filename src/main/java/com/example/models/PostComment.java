@@ -52,4 +52,5 @@ public class PostComment extends Abstract {
                 ", commentAuthor=" + commentAuthor.getUsername() +
                 '}';
     }
+
 }

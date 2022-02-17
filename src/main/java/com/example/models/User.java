@@ -77,4 +77,5 @@ public class User extends Abstract {
     public void setPageVisibility(VisibilityEnum pageVisibility) {
         this.pageVisibility = pageVisibility;
     }
+
 }
