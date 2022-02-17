@@ -18,7 +18,6 @@ import javax.transaction.Transactional;
 @Component
 public class SetupDataLoader implements ApplicationListener<ApplicationReadyEvent> {
 
-
     private final UserService userService;
     private final PostService postService;
     private final PostCommentService postCommentService;
@@ -39,10 +38,12 @@ public class SetupDataLoader implements ApplicationListener<ApplicationReadyEven
                 "They are friends c:");
         UserDto user1 = new UserDto("user1", "1234");
         boolean isUserExist = userService.isUserExist(user1);
+
         if (isUserExist) {
             System.out.println("SetupDataLoader: Setup already done");
             return;
         }
+
         UserDto user2 = new UserDto("user2", "1234");
         userService.saveUser(user1);
         userService.saveUser(user2);
@@ -66,4 +67,5 @@ public class SetupDataLoader implements ApplicationListener<ApplicationReadyEven
 
         System.out.println("SetupDataLoader: completed setup\n");
     }
+
 }

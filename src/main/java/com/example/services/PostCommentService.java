@@ -12,6 +12,7 @@ import javax.transaction.Transactional;
 
 @Service
 public class PostCommentService {
+
     private final PostRepository postRepository;
     private final PostCommentRepository commentRepo;
 
@@ -31,4 +32,5 @@ public class PostCommentService {
         System.out.println("PostCommentService: " + postComment);
         post.getComments().add(postComment);
     }
+
 }
