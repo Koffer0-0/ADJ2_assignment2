@@ -33,7 +33,7 @@ public class PostCommentService {
 
         postComment = commentRepo.save(postComment);
 
-        System.out.println("PostCommentService: " + postComment);
+        System.out.println("Post Comment Service: " + postComment);
         post.getComments().add(postComment);
 
     }
