@@ -1,6 +1,6 @@
 package com.example.entites;
 
-public enum VisibilityEnum {
+public enum Visibility {
 
     VISIBLE_TO_FRIENDS,
     VISIBLE_TO_USERS,

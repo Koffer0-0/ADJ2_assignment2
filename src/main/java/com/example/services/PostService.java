@@ -3,7 +3,7 @@ package com.example.services;
 import com.example.dto.PostDto;
 import com.example.entites.Post;
 import com.example.entites.User;
-import com.example.entites.VisibilityEnum;
+import com.example.entites.Visibility;
 import com.example.repositories.PostRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -36,7 +36,7 @@ public class PostService {
         user.getPosts().add(postEntity);
     }
 
-    public List<Post> findPosts(VisibilityEnum postVisibility) {
+    public List<Post> findPosts(Visibility postVisibility) {
         return postRepository.findPostsByPostVisibilityGreaterThanEqual(postVisibility);
     }
 
@@ -50,7 +50,7 @@ public class PostService {
 
     public Collection<Post> findPosts(String username, Principal principal) {
 
-        VisibilityEnum accessLevel = userService.determineAccessLevel(username, principal);
+        Visibility accessLevel = userService.determineAccessLevel(username, principal);
         System.out.println("Access level for current principal " + accessLevel);
 
         return postRepository.findPostsByPostAuthorUsernameAndPostVisibilityGreaterThanEqual(username, accessLevel);

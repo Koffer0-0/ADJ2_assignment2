@@ -29,7 +29,7 @@ public class User extends Abstract {
     @OneToMany()
     private Collection<Post> posts = new ArrayList<>();
 
-    private VisibilityEnum pageVisibility = VisibilityEnum.VISIBLE_TO_ALL;
+    private Visibility pageVisibility = Visibility.VISIBLE_TO_ALL;
 
     @Override
     public boolean equals(Object o) {
@@ -48,11 +48,11 @@ public class User extends Abstract {
         return friends;
     }
 
-    public VisibilityEnum getPageVisibility() {
+    public Visibility getPageVisibility() {
         return pageVisibility;
     }
 
-    public void setPageVisibility(VisibilityEnum pageVisibility) {
+    public void setPageVisibility(Visibility pageVisibility) {
         this.pageVisibility = pageVisibility;
     }
 

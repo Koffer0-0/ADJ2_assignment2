@@ -5,7 +5,7 @@ import com.example.dto.PostCommentDto;
 import com.example.dto.PostDto;
 import com.example.entites.Post;
 import com.example.entites.User;
-import com.example.entites.VisibilityEnum;
+import com.example.entites.Visibility;
 import com.example.services.PostCommentService;
 import com.example.services.PostService;
 import com.example.services.UserService;
@@ -42,13 +42,13 @@ public class AccountPageController {
 
     @GetMapping("/")
     public String index(Map<String, Object> model, Principal principal) {
-        VisibilityEnum visibilityEnum = null;
+        Visibility visibility = null;
         if (principal == null) {
-            visibilityEnum = VisibilityEnum.VISIBLE_TO_ALL;
+            visibility = Visibility.VISIBLE_TO_ALL;
         } else {
-            visibilityEnum = VisibilityEnum.VISIBLE_TO_USERS;
+            visibility = Visibility.VISIBLE_TO_USERS;
         }
-        model.put("posts", postService.findPosts(visibilityEnum));
+        model.put("posts", postService.findPosts(visibility));
         return "index";
     }
 
@@ -85,7 +85,7 @@ public class AccountPageController {
             model.put("posts", posts);
             return "blog_my";
         } else {
-            VisibilityEnum accessLevel = userService.determineAccessLevel(username, principal);
+            Visibility accessLevel = userService.determineAccessLevel(username, principal);
             if (user.getPageVisibility().ordinal() >= accessLevel.ordinal()) {
                 Collection<Post> posts = postService.findPosts(username, principal);
                 model.put("posts", posts);
@@ -137,7 +137,7 @@ public class AccountPageController {
 
     @PreAuthorize("#username == authentication.principal.username")
     @PostMapping("/set-page-visibility")
-    public String setPageVisibility(String username, VisibilityEnum pageVisibility) {
+    public String setPageVisibility(String username, Visibility pageVisibility) {
         userService.setPageVisibility(username, pageVisibility);
         return "redirect:/user/" + username;
     }

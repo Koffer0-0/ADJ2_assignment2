@@ -2,7 +2,7 @@ package com.example.services;
 
 import com.example.dto.UserDto;
 import com.example.entites.User;
-import com.example.entites.VisibilityEnum;
+import com.example.entites.Visibility;
 import com.example.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -65,21 +65,21 @@ public class UserService {
         return isPageOwner;
     }
 
-    public VisibilityEnum determineAccessLevel(final String username, final Principal principal) {
+    public Visibility determineAccessLevel(final String username, final Principal principal) {
         boolean isPageOwner = isPageOwner(username, principal);
-        VisibilityEnum accessLevel;
+        Visibility accessLevel;
         if (isPageOwner) {
-            accessLevel = VisibilityEnum.VISIBLE_TO_FRIENDS;
+            accessLevel = Visibility.VISIBLE_TO_FRIENDS;
         } else if (principal == null) {
-            accessLevel = VisibilityEnum.VISIBLE_TO_ALL;
+            accessLevel = Visibility.VISIBLE_TO_ALL;
         } else {
-            accessLevel = areFriends(username, principal.getName()) ? VisibilityEnum.VISIBLE_TO_FRIENDS : VisibilityEnum.VISIBLE_TO_USERS;
+            accessLevel = areFriends(username, principal.getName()) ? Visibility.VISIBLE_TO_FRIENDS : Visibility.VISIBLE_TO_USERS;
         }
         return accessLevel;
     }
 
     @Transactional
-    public void setPageVisibility(String username, VisibilityEnum pageVisibility) {
+    public void setPageVisibility(String username, Visibility pageVisibility) {
         User user = findUserByUsername(username);
         System.out.println("Changed page visibility of " + username + " to " + pageVisibility);
         user.setPageVisibility(pageVisibility);

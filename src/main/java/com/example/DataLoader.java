@@ -5,7 +5,7 @@ import com.example.dto.PostDto;
 import com.example.dto.UserDto;
 import com.example.entites.User;
 import com.example.entites.Post;
-import com.example.entites.VisibilityEnum;
+import com.example.entites.Visibility;
 import com.example.services.PostCommentService;
 import com.example.services.PostService;
 import com.example.services.UserService;
@@ -58,8 +58,8 @@ public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
         user2Entity.getFriends().add(user1Entity);
 
         PostDto postVisibleToAll = new PostDto("Саламалаейкум!", "этот пост виден всем", false);
-        PostDto postVisibleToUsers = new PostDto("Всем салам!", "этот пост видят только аутентифицированные", true, VisibilityEnum.VISIBLE_TO_USERS);
-        PostDto postVisibleToFriends = new PostDto("Друзьям салам", "этот пост виден друзьям", true, VisibilityEnum.VISIBLE_TO_FRIENDS);
+        PostDto postVisibleToUsers = new PostDto("Всем салам!", "этот пост видят только аутентифицированные", true, Visibility.VISIBLE_TO_USERS);
+        PostDto postVisibleToFriends = new PostDto("Друзьям салам", "этот пост виден друзьям", true, Visibility.VISIBLE_TO_FRIENDS);
 
         postService.savePost(postVisibleToFriends, user1.getUsername());
         postService.savePost(postVisibleToUsers, user1.getUsername());

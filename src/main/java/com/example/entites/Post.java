@@ -27,12 +27,8 @@ public class Post extends Abstract {
     @OneToMany
     private Collection<PostComment> comments = new ArrayList<>();
 
-    /**
-     * Users can disable comments on their posts
-     * Existing comments should be displayed, but new comments cannot be added
-     */
     private boolean isCommentsEnabled = true;
-    private VisibilityEnum postVisibility;
+    private Visibility postVisibility;
 
     @Override
     public String toString() {
