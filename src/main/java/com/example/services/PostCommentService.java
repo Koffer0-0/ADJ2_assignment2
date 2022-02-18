@@ -23,14 +23,19 @@ public class PostCommentService {
 
     @Transactional
     public void saveComment(PostCommentDto postCommentDto, User commentAuthor) {
+
         PostComment postComment = new PostComment();
         Post post = postRepository.findById(postCommentDto.getPostId());
+
         postComment.setCommentText(postCommentDto.getCommentText());
         postComment.setCommentAuthor(commentAuthor);
         postComment.setCommentedOn(post);
+
         postComment = commentRepo.save(postComment);
+
         System.out.println("PostCommentService: " + postComment);
         post.getComments().add(postComment);
+
     }
 
 }

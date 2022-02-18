@@ -5,6 +5,7 @@ import com.example.dto.PostDto;
 import com.example.models.User;
 import com.example.models.Post;
 import com.example.models.VisibilityEnum;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -13,6 +14,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
+@AllArgsConstructor
 @Service
 @Transactional
 public class PostService {
@@ -20,16 +22,11 @@ public class PostService {
     private final PostRepository postRepository;
     private final UserService userService;
 
-    public PostService(PostRepository postRepository, UserService userService) {
-        this.postRepository = postRepository;
-        this.userService = userService;
-    }
-
     @Transactional
     public void savePost(final PostDto postDto, final String username) {
         User user = userService.findUserByUsername(username);
-
         Post postEntity = new Post();
+
         postEntity.setPostTitle(postDto.getPostTitle());
         postEntity.setPostText(postDto.getPostText());
         postEntity.setPostAuthor(user);
@@ -47,7 +44,6 @@ public class PostService {
     }
 
     /**
-     *
      * @param username of the user
      * @return all posts of the user
      */
@@ -60,7 +56,6 @@ public class PostService {
     }
 
     /**
-     *
      * @param username of the user whose posts we're trying to find
      * @param principal current user
      * @return collection of posts with visibility in mind

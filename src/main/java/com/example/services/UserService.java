@@ -4,6 +4,7 @@ import com.example.repositories.UserRepository;
 import com.example.dto.UserDto;
 import com.example.models.User;
 import com.example.models.VisibilityEnum;
+import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -12,16 +13,12 @@ import java.security.Principal;
 import java.util.List;
 import java.util.UUID;
 
+@AllArgsConstructor
 @Service("userService")
 public class UserService {
 
     private final UserRepository userRepository;
     final PasswordEncoder passwordEncoder;
-
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
 
     public void saveUser(final UserDto userDto){
         User customerModel = addUser(userDto);
@@ -70,7 +67,6 @@ public class UserService {
 
     public VisibilityEnum determineAccessLevel(final String username, final Principal principal) {
         boolean isPageOwner = isPageOwner(username, principal);
-        // TODO: refactor maybe?
         VisibilityEnum accessLevel;
         if (isPageOwner) {
             accessLevel = VisibilityEnum.VISIBLE_TO_FRIENDS;

@@ -32,12 +32,10 @@ public class SetupDataLoader implements ApplicationListener<ApplicationReadyEven
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         // create users
-        System.out.println("Hello!\n" +
-                "{username: Maksat, password: 1111}\n" +
-                "{username: Timur, password: 2222}\n" +
-                "{username: John, password: 3333}\n" +
-                "They are friends c:");
-
+        System.out.println(
+                "username: Maksat, pass: 1111}\n" +
+                "username: Timur, pass: 2222}\n" +
+                "username: John, pass: 3333}\n");
 
         UserDto user1 = new UserDto("Maksat", "1111");
         UserDto user2 = new UserDto("Timur", "2222");
