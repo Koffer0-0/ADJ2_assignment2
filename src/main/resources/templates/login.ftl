@@ -40,7 +40,7 @@
                     <div class="auth-innerright">
                         <div class="authentication-box">
                             <div class="card-body p-0">
-                                <div class="cont text-center" style="background: #FFE4C4">
+                                <div class="cont text-center w-25" style="background: #FFE4C4">
                                     <div>
                                         <form class="theme-form" method="POST" action="/login">
                                             <h4>Login</h4>
@@ -65,7 +65,7 @@
 
                                                 <button class="btn"
                                                         style="background: orangered ; position: relative;left: 50%; transform: translate(-50%, 0);"
-                                                        type="submit">LOGIN
+                                                        type="submit">Sign in
                                                 </button>
 
                                             </div>
