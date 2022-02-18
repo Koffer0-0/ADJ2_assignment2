@@ -98,7 +98,7 @@
                                             <#list post.getComments() as comment>
                                                 <li>
                                                     <div class="media"><img class="align-self-center"
-                                                                            src="/images/blog/14.png"
+                                                                            src="/images/blog/6.png"
                                                                             alt="Generic placeholder image">
                                                         <div class="media-body">
                                                             <div class="row">

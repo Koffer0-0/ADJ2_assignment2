@@ -33,9 +33,9 @@ public class SetupDataLoader implements ApplicationListener<ApplicationReadyEven
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         // create users
         System.out.println(
-                "username: Maksat, pass: 1111}\n" +
-                "username: Timur, pass: 2222}\n" +
-                "username: John, pass: 3333}\n");
+                "user: Maksat, pass: 1111}\n" +
+                "user: Timur, pass: 2222}\n" +
+                "user: John, pass: 3333}\n");
 
         UserDto user1 = new UserDto("Maksat", "1111");
         UserDto user2 = new UserDto("Timur", "2222");
