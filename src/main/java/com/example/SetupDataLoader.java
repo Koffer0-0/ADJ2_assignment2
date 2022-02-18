@@ -33,10 +33,16 @@ public class SetupDataLoader implements ApplicationListener<ApplicationReadyEven
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         // create users
         System.out.println("Hello!\n" +
-                "{username: user1, password: 1234}\n" +
-                "{username: user2, password: 1234}\n" +
+                "{username: Maksat, password: 1111}\n" +
+                "{username: Timur, password: 2222}\n" +
+                "{username: John, password: 3333}\n" +
                 "They are friends c:");
-        UserDto user1 = new UserDto("user1", "1234");
+
+
+        UserDto user1 = new UserDto("Maksat", "1111");
+        UserDto user2 = new UserDto("Timur", "2222");
+        UserDto user3 = new UserDto("John", "3333");
+
         boolean isUserExist = userService.isUserExist(user1);
 
         if (isUserExist) {
@@ -44,24 +50,26 @@ public class SetupDataLoader implements ApplicationListener<ApplicationReadyEven
             return;
         }
 
-        UserDto user2 = new UserDto("user2", "1234");
         userService.saveUser(user1);
         userService.saveUser(user2);
+        userService.saveUser(user3);
 
         User user1Entity = userService.findUserByUsername(user1.getUsername());
         User user2Entity = userService.findUserByUsername(user2.getUsername());
         user1Entity.getFriends().add(user2Entity);
         user2Entity.getFriends().add(user1Entity);
 
-        PostDto postVisibleToAll = new PostDto("Hello, world!", "all users can see this post", false);
-        PostDto postVisibleToUsers = new PostDto("Hello, users!", "only authenticated users can see this post", true, VisibilityEnum.VISIBLE_TO_USERS);
-        PostDto postVisibleToFriends = new PostDto("Hello, friends!", "only friends can see this post", true, VisibilityEnum.VISIBLE_TO_FRIENDS);
-        postService.savePost(postVisibleToAll, user2.getUsername());
+        PostDto postVisibleToAll = new PostDto("Саламалаейкум!", "этот пост виден всем", false);
+        PostDto postVisibleToUsers = new PostDto("Всем салам!", "этот пост видят только аутентифицированные", true, VisibilityEnum.VISIBLE_TO_USERS);
+        PostDto postVisibleToFriends = new PostDto("Друзьям салам", "этот пост виден друзьям", true, VisibilityEnum.VISIBLE_TO_FRIENDS);
+
         postService.savePost(postVisibleToFriends, user1.getUsername());
         postService.savePost(postVisibleToUsers, user1.getUsername());
 
+        postService.savePost(postVisibleToAll, user2.getUsername());
         Post post = postService.findAllPostsOf(user2.getUsername()).get(0);
-        PostCommentDto postCommentDto = new PostCommentDto(post.getId(), "Hey!!");
+
+        PostCommentDto postCommentDto = new PostCommentDto(post.getId(), "Хэй!");
 
         postCommentService.saveComment(postCommentDto, userService.findUserByUsername(user1.getUsername()));
 
