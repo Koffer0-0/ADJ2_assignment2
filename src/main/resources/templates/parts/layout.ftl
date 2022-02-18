@@ -46,16 +46,20 @@
                 </div>
                 <div class="mobile-sidebar">
                     <div class="media-body text-right switch-sm">
-                        <label class="switch ml-3"><i class="font-primary" id="sidebar-toggle"
-                                                      data-feather="align-center"></i></label>
+                        <label class="switch ml-3">
+                            <i class="font-primary" id="sidebar-toggle" data-feather="align-center"></i></label>
                     </div>
                 </div>
-                <div class="vertical-mobile-sidebar"><i class="fa fa-bars sidebar-bar"></i></div>
+                <div class="vertical-mobile-sidebar">
+                    <i class="fa fa-bars sidebar-bar">
+
+                    </i>
+                </div>
                 <div class="nav-right col pull-right right-menu">
                     <ul class="nav-menus">
                         <li></li>
                         <li class="onhover-dropdown"><span class="media user-header">
-                        <img class="img-fluid"src="/images/dashboard/user.png" alt=""></span>
+                        <img src="/images/dashboard/user.png" alt=""></span>
                             <ul class="onhover-show-div profile-dropdown">
                                 <li class="gradient-primary">
                                     <h5 class="f-w-600 mb-0">
