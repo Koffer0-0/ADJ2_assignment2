@@ -44,6 +44,5 @@
                 </#if>
             </div>
         </div>
-        <!-- Container-fluid Ends-->
     </div>
 </@layout.page>

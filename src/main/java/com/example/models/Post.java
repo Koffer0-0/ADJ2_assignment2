@@ -9,6 +9,10 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import lombok.*;
+
+@Data
+@NoArgsConstructor
 @Entity
 public class Post extends Abstract {
 
@@ -29,53 +33,6 @@ public class Post extends Abstract {
      */
     private boolean isCommentsEnabled = true;
     private VisibilityEnum postVisibility;
-
-    public Post() {
-    }
-
-    public User getPostAuthor() {
-        return postAuthor;
-    }
-
-    public void setPostAuthor(User postAuthor) {
-        this.postAuthor = postAuthor;
-    }
-
-    public String getPostTitle() {
-        return postTitle;
-    }
-
-    public void setPostTitle(String postTitle) {
-        this.postTitle = postTitle;
-    }
-
-    public String getPostText() {
-        return postText;
-    }
-
-    public void setPostText(String postText) {
-        this.postText = postText;
-    }
-
-    public boolean isCommentsEnabled() {
-        return isCommentsEnabled;
-    }
-
-    public void setCommentsEnabled(boolean commentsEnabled) {
-        isCommentsEnabled = commentsEnabled;
-    }
-
-    public Collection<PostComment> getComments() {
-        return comments;
-    }
-
-    public void setPostVisibility(VisibilityEnum postVisibility) {
-        this.postVisibility = postVisibility;
-    }
-
-    public VisibilityEnum getPostVisibility() {
-        return postVisibility;
-    }
 
     @Override
     public String toString() {

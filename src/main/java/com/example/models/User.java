@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
 
+import lombok.*;
+
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User extends Abstract {
@@ -28,30 +32,6 @@ public class User extends Abstract {
     private Collection<Post> posts = new ArrayList<>();
 
     private VisibilityEnum pageVisibility = VisibilityEnum.VISIBLE_TO_ALL;
-
-    public User(){
-
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Collection<Post> getPosts() {
-        return posts;
-    }
 
     @Override
     public boolean equals(Object o) {

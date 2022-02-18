@@ -10,11 +10,10 @@ import java.util.UUID;
 public interface PostRepository extends JpaRepository<Post, Long> {
 
     List<Post> findPostsByPostAuthorUsernameOrderByCreatedDateDesc(String postAuthor_username);
-    Post findById(UUID id);
-
     List<Post> findPostsByPostAuthorUsernameAndPostVisibilityGreaterThanEqual(String postAuthor_username, VisibilityEnum postVisibility);
     List<Post> findPostsByPostVisibilityGreaterThanEqual(VisibilityEnum postVisibility);
-
     List<Post> findPostsByPostAuthorUsername(String postAuthor_username);
+
+    Post findById(UUID id);
 
 }

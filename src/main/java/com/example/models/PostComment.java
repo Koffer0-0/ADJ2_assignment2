@@ -5,6 +5,10 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
+import lombok.*;
+
+@Data
+@NoArgsConstructor
 @Entity
 public class PostComment extends Abstract {
 
@@ -17,33 +21,6 @@ public class PostComment extends Abstract {
     @JsonBackReference
     @ManyToOne
     private User commentAuthor;
-
-    public PostComment() {
-    }
-
-    public Post getCommentedOn() {
-        return commentedOn;
-    }
-
-    public void setCommentedOn(Post commentedOn) {
-        this.commentedOn = commentedOn;
-    }
-
-    public User getCommentAuthor() {
-        return commentAuthor;
-    }
-
-    public void setCommentAuthor(User commentAuthor) {
-        this.commentAuthor = commentAuthor;
-    }
-
-    public String getCommentText() {
-        return commentText;
-    }
-
-    public void setCommentText(String commentText) {
-        this.commentText = commentText;
-    }
 
     @Override
     public String toString() {

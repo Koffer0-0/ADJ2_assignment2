@@ -54,9 +54,9 @@
                 <div class="nav-right col pull-right right-menu">
                     <ul class="nav-menus">
                         <li></li>
-                        <li class="onhover-dropdown"><span class="media user-header"><img class="img-fluid"
-                                                                                          src="/images/dashboard/user.png"
-                                                                                          alt=""></span>
+                        <li class="onhover-dropdown"><span class="media user-header">
+                                <img class="img-fluid" src="/images/dashboard/user.png" alt=""></span>
+
                             <ul class="onhover-show-div profile-dropdown">
                                 <li class="gradient-primary">
                                     <h5 class="f-w-600 mb-0">
@@ -118,10 +118,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 footer-copyright">
-                            <p class="mb-0">Copyright © 2021 Poco theme. All rights reserved.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="pull-right mb-0">Hand-crafted & made with<i class="fa fa-heart"></i></p>
+                            <p class="mb-0">Copyright 2022</p>
                         </div>
                     </div>
                 </div>
