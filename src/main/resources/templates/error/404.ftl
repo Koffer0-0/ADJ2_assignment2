@@ -7,62 +7,25 @@
     <link rel="icon" href="/images/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
     <title>404</title>
-    <!-- Google font-->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <!-- Font Awesome-->
-    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
-    <!-- ico-font-->
-    <link rel="stylesheet" type="text/css" href="/css/icofont.css">
-    <!-- Themify icon-->
-    <link rel="stylesheet" type="text/css" href="/css/themify.css">
-    <!-- Feather icon-->
-    <link rel="stylesheet" type="text/css" href="/css/feather-icon.css">
-    <link rel="stylesheet" type="text/css" href="/css/animate.css">
-    <!-- Plugins css start-->
-    <!-- Plugins css Ends-->
-    <!-- Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-    <!-- App css-->
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link id="color" rel="stylesheet" href="/css/color-1.css" media="screen">
-    <!-- Responsive css-->
-    <link rel="stylesheet" type="text/css" href="/css/responsive.css">
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
   </head>
   <body>
 
-    <!-- page-wrapper Start-->
-    <div class="page-wrapper">
-      <!-- error-404 start-->
-      <div class="error-wrapper">
-        <div class="container"><img class="img-100" src="/images/other-images/sad.png" alt="">
-          <div class="error-heading">
-            <h2 class="headline font-danger">404</h2>
-          </div>
-          <div class="col-md-8 offset-md-2">
-            <p class="sub-content">The page you are attempting to reach is currently not available. This may be because the page does not exist or has been moved.</p>
-          </div>
-          <div><a class="btn btn-danger-gradien btn-lg" href="/">BACK TO HOME PAGE</a></div>
-        </div>
+  <div id="notfound">
+    <div class="notfound">
+      <div class="notfound-404">
+        <h3>Oops! Page not found</h3>
+        <h1><span>4</span><span>0</span><span>4</span></h1>
       </div>
-      <!-- error-404 end      -->
+      <h2>we are sorry, but the page you requested was not found</h2>
     </div>
-    <!-- latest jquery-->
-    <script src="/js/jquery-3.5.1.min.js"></script>
-    <!-- Bootstrap js-->
-    <script src="/js/bootstrap/popper.min.js"></script>
-    <script src="/js/bootstrap/bootstrap.js"></script>
-    <!-- feather icon js-->
-    <script src="/js/icons/feather-icon/feather.min.js"></script>
-    <script src="/js/icons/feather-icon/feather-icon.js"></script>
-    <!-- Sidebar jquery-->
-    <script src="/js/sidebar-menu.js"></script>
-    <script src="/js/config.js"></script>
-    <!-- Plugins JS start-->
-    <!-- Plugins JS Ends-->
-    <!-- Theme js-->
-    <script src="/js/script.js"></script>
-    <script src="/js/theme-customizer/customizer.js"></script>
-    <!-- login js-->
-    <!-- Plugin used-->
+  </div>
+
   </body>
 </html>

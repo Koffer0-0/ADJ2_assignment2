@@ -41,7 +41,6 @@ public class AccountPageController {
         this.commentService = commentService;
     }
 
-
     @GetMapping("/")
     public String index(Map<String, Object> model, Principal principal) {
         VisibilityEnum visibilityEnum = null;

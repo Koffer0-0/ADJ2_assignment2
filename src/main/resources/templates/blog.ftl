@@ -54,8 +54,6 @@
                                             <li>
                                                 <i class="icofont icofont-user"></i><span>${post.getPostAuthor().getUsername()} </span>
                                             </li>
-                                            <li class="digits"><i class="icofont icofont-thumbs-up"></i>02
-                                                <span>Hits</span></li>
                                             <li class="digits"><i
                                                         class="icofont icofont-ui-chat"></i>${post.getComments()?size}
                                                 Comments
@@ -91,10 +89,6 @@
                                                                 </div>
                                                                 <div class="col-md-8">
                                                                     <ul class="comment-social float-left float-md-right">
-                                                                        <li class="digits"><i
-                                                                                    class="icofont icofont-thumbs-up"></i>02
-                                                                            Hits
-                                                                        </li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
