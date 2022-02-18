@@ -18,7 +18,7 @@ public class User extends Abstract {
 
     private String username;
     private String password;
-    
+
     @ManyToMany
     private Collection<User> friends = new ArrayList<>();
 

@@ -71,7 +71,6 @@ public class AccountPageController {
         return "redirect:/user/" + principal.getName();
     }
 
-//    @PostAuthorize()
     @GetMapping("/user/{username}")
     public String user(HttpServletRequest request, @PathVariable String username, Map<String, Object> model, Principal principal) {
         User user = userService.findUserByUsername(username);
@@ -113,12 +112,15 @@ public class AccountPageController {
     @PreAuthorize("hasRole('USERS')")
     @PostMapping("/create-post")
     public String createPost(PostDto postDto, Principal principal) {
-        System.out.println("" + principal.getName());
-        System.out.println(postDto.getPostTitle() + "\n" + postDto.getPostText() + "\nVisibility: " +postDto.getPostVisibility() + "\nComments: " + postDto.isCommentsEnabled());
+        System.out.println(" " + principal.getName());
+        System.out.println(postDto.getPostTitle()
+                + "\n" + postDto.getPostText()
+                + "\nVisibility: " + postDto.getPostVisibility()
+                + "\nComments: " + postDto.isCommentsEnabled());
         try {
             postService.savePost(postDto, principal.getName());
         } catch (Exception e) {
-            return "error/403";
+            return "error/404";
         }
         return "redirect:/user/" + principal.getName();
     }
@@ -130,7 +132,7 @@ public class AccountPageController {
         try {
             postService.setCommentsEnabled(postId, commentsEnabled, principal);
         } catch (Exception e) {
-            return "error/403";
+            return "error/404";
         }
         return "redirect:/user/" + principal.getName();
     }
