@@ -68,4 +68,19 @@ public class PostService {
         post.setCommentsEnabled(commentsEnabled);
     }
 
+    @Transactional
+    public Post savePostWebSocket(final PostDto postDto, final String username) {
+        User user = userService.findUserByUsername(username);
+        Post postEntity = new Post();
+        postEntity.setPostTitle(postDto.getPostTitle());
+        postEntity.setPostText(postDto.getPostText());
+        postEntity.setPostAuthor(user);
+        postEntity.setCommentsEnabled(postDto.isCommentsEnabled());
+        postEntity.setPostVisibility(postDto.getPostVisibility());
+        postEntity = postRepository.save(postEntity);
+        user.getPosts().add(postEntity);
+
+        return postEntity;
+    }
+
 }

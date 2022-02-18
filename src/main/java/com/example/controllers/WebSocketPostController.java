@@ -1,10 +1,9 @@
-package com.example.teamapp.controllers;
+package com.example.controllers;
 
-
-import com.example.teamapp.dto.PostDto;
-import com.example.teamapp.models.PostEntity;
-import com.example.teamapp.models.VisibilityEnum;
-import com.example.teamapp.services.PostService;
+import com.example.dto.PostDto;
+import com.example.entites.Post;
+import com.example.entites.Visibility;
+import com.example.services.PostService;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,19 +22,18 @@ public class WebSocketPostController {
     }
 
     @GetMapping("/posts")
-    public Iterable<PostEntity> getPosts(){
-        return postService.findPosts(VisibilityEnum.VISIBLE_TO_ALL);
+    public Iterable<Post> getPosts(){
+        return postService.findPosts(Visibility.VISIBLE_TO_ALL);
     }
-
 
     @SendTo("/blog/add")
     @MessageMapping("/addBlogPost")
     @PreAuthorize("hasRole('USERS')")
-    public PostEntity addPost(PostDto postDto, Principal principal){
+    public Post addPost(PostDto postDto, Principal principal){
         try {
             return postService.savePostWebSocket(postDto, principal.getName());
         } catch (Exception e) {
-            return new PostEntity();
+            return new Post();
         }
     }
 

@@ -29,4 +29,7 @@ public class PostDto {
         this.commentsEnabled = isCommentsEnabled;
     }
 
+    public PostDto(String s) {
+
+    }
 }
