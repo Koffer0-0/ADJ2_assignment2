@@ -37,6 +37,9 @@
                           <div class="valid-feedback">Looks good!</div>
                         </div>
                         <div class="form-group">
+
+                        </div>
+                        <div class="form-group">
                           <label>Post visibility:</label>
                           <div class="m-checkbox-inline">
                             <label for="edo-ani">

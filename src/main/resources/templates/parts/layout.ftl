@@ -63,7 +63,7 @@
                             <ul class="onhover-show-div profile-dropdown">
                                 <li class="gradient-primary">
                                     <h5 class="f-w-600 mb-0">
-                                        ${(Session.SPRING_SECURITY_CONTEXT.authentication.principal.username)!"Unknown"}
+                                        ${(Session.SPRING_SECURITY_CONTEXT.authentication.principal.username)!"Not Loged"}
                                     </h5><span>User</span>
                                 </li>
                                 <li><i data-feather="user"> </i><a href="/profile">Profile</a></li>
@@ -121,10 +121,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 footer-copyright">
-                            <p class="mb-0">Copyright © 2021 Poco theme. All rights reserved.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="pull-right mb-0">Hand-crafted & made with<i class="fa fa-heart"></i></p>
+                            <p class="mb-0">Copyright 2022</p>
                         </div>
                     </div>
                 </div>

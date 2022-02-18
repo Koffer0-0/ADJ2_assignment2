@@ -29,7 +29,6 @@
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <div class="form-group">
                             <label>Page visibility:</label>
-                            <!-- TODO: learn to not shitcode xd -->
                             <div class="m-checkbox-inline">
                                 <label for="edo-ani">
                                     <input class="radio_animated" id="edo-ani" type="radio" name="pageVisibility" <#if user.getPageVisibility().ordinal() == 2> checked=""</#if> value="VISIBLE_TO_ALL">All
@@ -41,7 +40,6 @@
                                     <input class="radio_animated" id="edo-ani2" type="radio" name="pageVisibility" <#if user.getPageVisibility().ordinal() == 0> checked=""</#if> value="VISIBLE_TO_FRIENDS">Friends
                                 </label>
                             </div>
-                            <!-- shitcode -->
                         </div>
                     </form>
                     <div class="btn-showcase">

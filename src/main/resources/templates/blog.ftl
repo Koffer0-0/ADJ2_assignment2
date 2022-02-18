@@ -80,9 +80,8 @@
                                         <ul>
                                             <#list post.getComments() as comment>
                                                 <li>
-                                                    <div class="media"><img class="align-self-center"
-                                                                            src="/images/blog/14.png"
-                                                                            alt="Generic placeholder image">
+                                                    <div class="media">
+                                                        <img class="align-self-center" src="/images/blog/14.png"alt="Generic placeholder image">
                                                         <div class="media-body">
                                                             <div class="row">
                                                                 <div class="col-md-4">
@@ -96,7 +95,6 @@
                                                                                     class="icofont icofont-thumbs-up"></i>02
                                                                             Hits
                                                                         </li>
-                                                                        <#--                                          <li class="digits"><i class="icofont icofont-ui-chat"></i>598 Comments</li>-->
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -136,11 +134,10 @@
                             </div>
                         </#list>
                     <#else>
-                        <p>You have no access to posts</p>
+                        <p>You have no access to the posts</p>
                     </#if>
                 </div>
             </div>
         </div>
-        <!-- Container-fluid Ends-->
     </div>
 </@layout.page>
