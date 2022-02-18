@@ -22,14 +22,14 @@ public class WebSocketPostController {
     }
 
     @GetMapping("/posts")
-    public Iterable<Post> getPosts(){
+    public Iterable<Post> getPosts() {
         return postService.findPosts(Visibility.VISIBLE_TO_ALL);
     }
 
     @SendTo("/blog/add")
     @MessageMapping("/addBlogPost")
     @PreAuthorize("hasRole('USERS')")
-    public Post addPost(PostDto postDto, Principal principal){
+    public Post addPost(PostDto postDto, Principal principal) {
         try {
             return postService.savePostWebSocket(postDto, principal.getName());
         } catch (Exception e) {
