@@ -36,17 +36,10 @@ public class PostService {
         user.getPosts().add(postEntity);
     }
 
-    /**
-     * @return all posts by visibility
-     */
     public List<Post> findPosts(VisibilityEnum postVisibility) {
         return postRepository.findPostsByPostVisibilityGreaterThanEqual(postVisibility);
     }
 
-    /**
-     * @param username of the user
-     * @return all posts of the user
-     */
     public List<Post> findAllPostsOf(String username) {
         return postRepository.findPostsByPostAuthorUsername(username);
     }
@@ -54,12 +47,6 @@ public class PostService {
     public Post findPost(UUID postId) {
         return postRepository.findById(postId);
     }
-
-    /**
-     * @param username  of the user whose posts we're trying to find
-     * @param principal current user
-     * @return collection of posts with visibility in mind
-     */
 
     public Collection<Post> findPosts(String username, Principal principal) {
 
