@@ -18,12 +18,7 @@ public class User extends Abstract {
 
     private String username;
     private String password;
-
-    // TODO(Make friends)
-    //  list all users in findUsers if username is not specified
-    //  and add button to send friend request
-    //  page to see incoming friend request
-    //  accept from there
+    
     @ManyToMany
     private Collection<User> friends = new ArrayList<>();
 
