@@ -54,9 +54,8 @@
                 <div class="nav-right col pull-right right-menu">
                     <ul class="nav-menus">
                         <li></li>
-                        <li class="onhover-dropdown"><span class="media user-header"><img class="img-fluid"
-                                                                                          src="/images/dashboard/user.png"
-                                                                                          alt=""></span>
+                        <li class="onhover-dropdown"><span class="media user-header">
+                        <img class="img-fluid"src="/images/dashboard/user.png" alt=""></span>
                             <ul class="onhover-show-div profile-dropdown">
                                 <li class="gradient-primary">
                                     <h5 class="f-w-600 mb-0">
