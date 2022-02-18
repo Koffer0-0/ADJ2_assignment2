@@ -1,17 +1,17 @@
 <#import "parts/layout.ftl" as layout>
 <@layout.page>
-    <div class="page-body">
+    <div class="page-body" style="background: #FAF0E6">
         <div class="container-fluid">
             <div class="page-header">
                 <div class="row">
                     <div class="col-lg-6 main-header">
-                        <h2>Basic <span>DataTables  </span></h2>
-                        <h6 class="mb-0">admin panel</h6>
+                        <h2 style="color: orange">Basic DataTables</h2>
+                        <h6 class="mb-0" style="color: black">admin panel</h6>
                     </div>
                     <div class="col-lg-6 breadcrumb-right">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/"><i class="pe-7s-home"></i></a></li>
-                            <li class="breadcrumb-item">Friends</li>
+                            <li><a href="/"><p style="color: orange">Home /</p></a></li>
+                            <li style="color: orange"><p>Friends</p></li>
                         </ol>
                     </div>
                 </div>
@@ -37,7 +37,8 @@
                                     <tbody>
                                     <#list friends as friend>
                                         <tr>
-                                            <td><a href="/user/${friend.getUsername()}">${friend.getUsername()}</a></td>
+                                            <td><a style="color: orangered;"
+                                                   href="/user/${friend.getUsername()}">${friend.getUsername()}</a></td>
                                             <td>${friend.getCreatedDate()}</td>
                                         </tr>
                                     </#list>

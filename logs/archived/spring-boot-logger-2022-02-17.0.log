@@ -4229,7 +4229,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'assignment2_adj2.users' does
 2022-02-17 21:35:55,016 INFO org.springframework.core.log.CompositeLog [main] Started.
 2022-02-17 21:35:55,022 INFO org.springframework.boot.StartupInfoLogger [main] Started ADJ2_assignment2Application in 2.713 seconds (JVM running for 3.166)
 2022-02-17 21:35:55,319 ERROR org.springframework.boot.SpringApplication [main] Application run failed
-java.lang.NullPointerException: Cannot invoke "com.example.models.Post.getComments()" because "postEntity" is null
+java.lang.NullPointerException: Cannot invoke "com.example.entites.Post.getComments()" because "postEntity" is null
 	at com.example.services.PostCommentService.saveComment(PostCommentService.java:32)
 	at com.example.services.PostCommentService$$FastClassBySpringCGLIB$$ae894f55.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
@@ -4306,7 +4306,7 @@ java.lang.NullPointerException: Cannot invoke "com.example.models.Post.getCommen
 2022-02-17 21:37:52,172 INFO org.springframework.core.log.CompositeLog [main] Started.
 2022-02-17 21:37:52,178 INFO org.springframework.boot.StartupInfoLogger [main] Started ADJ2_assignment2Application in 2.825 seconds (JVM running for 3.297)
 2022-02-17 21:37:52,481 ERROR org.springframework.boot.SpringApplication [main] Application run failed
-java.lang.NullPointerException: Cannot invoke "com.example.models.Post.getComments()" because "post" is null
+java.lang.NullPointerException: Cannot invoke "com.example.entites.Post.getComments()" because "post" is null
 	at com.example.services.PostCommentService.saveComment(PostCommentService.java:32)
 	at com.example.services.PostCommentService$$FastClassBySpringCGLIB$$ae894f55.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
@@ -4375,7 +4375,7 @@ java.lang.NullPointerException: Cannot invoke "com.example.models.Post.getCommen
 2022-02-17 21:43:51,601 INFO org.springframework.core.log.CompositeLog [main] Started.
 2022-02-17 21:43:51,618 INFO org.springframework.boot.StartupInfoLogger [main] Started ADJ2assignment2ApplicationTests in 5.233 seconds (JVM running for 6.616)
 2022-02-17 21:43:52,051 ERROR org.springframework.boot.SpringApplication [main] Application run failed
-java.lang.NullPointerException: Cannot invoke "com.example.models.Post.getComments()" because "post" is null
+java.lang.NullPointerException: Cannot invoke "com.example.entites.Post.getComments()" because "post" is null
 	at com.example.services.PostCommentService.saveComment(PostCommentService.java:33)
 	at com.example.services.PostCommentService$$FastClassBySpringCGLIB$$ae894f55.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
@@ -4561,7 +4561,7 @@ java.lang.IllegalStateException: Failed to load ApplicationContext
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
-Caused by: java.lang.NullPointerException: Cannot invoke "com.example.models.Post.getComments()" because "post" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "com.example.entites.Post.getComments()" because "post" is null
 	at com.example.services.PostCommentService.saveComment(PostCommentService.java:33)
 	at com.example.services.PostCommentService$$FastClassBySpringCGLIB$$ae894f55.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)

@@ -5,8 +5,7 @@ function setConnected(connected) {
     $("#disconnect").prop("disabled", !connected);
     if (connected) {
         $("#conversation").show();
-    }
-    else {
+    } else {
         $("#conversation").hide();
     }
     $("#greetings").html("");
@@ -36,10 +35,14 @@ $(function () {
     $("form").on('submit', function (e) {
         e.preventDefault();
     });
-    window.onload = function() {
+    window.onload = function () {
         connect();
         setConnected(true)
     };
-    $( "#connect" ).click(function() { connect(); });
-    $( "#send" ).click(function() { sendName(); });
+    $("#connect").click(function () {
+        connect();
+    });
+    $("#send").click(function () {
+        sendName();
+    });
 });

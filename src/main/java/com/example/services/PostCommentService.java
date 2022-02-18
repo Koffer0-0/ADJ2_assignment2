@@ -1,11 +1,11 @@
 package com.example.services;
 
+import com.example.dto.PostCommentDto;
+import com.example.entites.Post;
+import com.example.entites.PostComment;
+import com.example.entites.User;
 import com.example.repositories.PostCommentRepository;
 import com.example.repositories.PostRepository;
-import com.example.dto.PostCommentDto;
-import com.example.models.User;
-import com.example.models.PostComment;
-import com.example.models.Post;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

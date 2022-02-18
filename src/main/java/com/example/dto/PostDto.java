@@ -1,8 +1,9 @@
 package com.example.dto;
 
-import com.example.models.VisibilityEnum;
-
-import lombok.*;
+import com.example.entites.VisibilityEnum;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor

@@ -1,25 +1,24 @@
 <#import "parts/layout.ftl" as layout>
 <@layout.page>
-    <div class="page-body">
+    <div class="page-body" style="background: #FAF0E6">
         <div class="container-fluid">
             <div class="page-header">
                 <div class="row">
                     <div class="col-lg-6 main-header">
-                        <#--                  <h2>Blog<span>Single</span></h2>-->
-                        <h2>${user.getUsername()}'s Blog</h2>
-                        <h6 class="mb-0">admin panel</h6>
+                        <h2 style="color: orange">${user.getUsername()}'s Blog</h2>
+                        <h6 class="mb-0" style="color: black">admin panel</h6>
                     </div>
                     <div class="col-lg-6 breadcrumb-right">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/"><i class="pe-7s-home"></i></a></li>
-                            <li class="breadcrumb-item">Apps</li>
-                            <li class="breadcrumb-item">Blog</li>
-                            <li class="breadcrumb-item active">Blog Single</li>
+                            <li><a href="/"><p style="color: orange">Home / </p></a></li>
+                            <li><p style="color: orange">Apps / </p></li>
+                            <li><p style="color: orange">Blog / </p></li>
+                            <li><p style="color: orange">Blog Single </p></li>
                         </ol>
                     </div>
                 </div>
                 <br>
-<#--                TODO: finish implementing this-->
+                <#--                TODO: finish implementing this-->
                 <#if (Session.SPRING_SECURITY_CONTEXT.authentication.principal.username)??>
                     <div class="row">
                         <p>Adding to friends doesn't work yet</p>
@@ -29,7 +28,7 @@
                             <input type="hidden" name="">
                         </form>
                         <div class="col-lg-12 btn-showcase">
-                            <button form="add-friend-form" class="btn btn-primary btn-pill"><i
+                            <button form="add-friend-form" class="btn btn-pill" style="background: orange"><i
                                         class="icofont icofont-people"></i> Add to friends
                             </button>
                         </div>
@@ -53,6 +52,8 @@
                                             <li>
                                                 <i class="icofont icofont-user"></i><span>${post.getPostAuthor().getUsername()} </span>
                                             </li>
+                                            <li class="digits"><i class="icofont icofont-thumbs-up"></i>02
+                                                <span>Hits</span></li>
                                             <li class="digits"><i
                                                         class="icofont icofont-ui-chat"></i>${post.getComments()?size}
                                                 Comments
@@ -75,8 +76,9 @@
                                         <ul>
                                             <#list post.getComments() as comment>
                                                 <li>
-                                                    <div class="media">
-                                                        <img class="align-self-center" src="/images/blog/14.png"alt="Generic placeholder image">
+                                                    <div class="media"><img class="align-self-center"
+                                                                            src="/images/blog/14.png"
+                                                                            alt="Generic placeholder image">
                                                         <div class="media-body">
                                                             <div class="row">
                                                                 <div class="col-md-4">
@@ -86,6 +88,10 @@
                                                                 </div>
                                                                 <div class="col-md-8">
                                                                     <ul class="comment-social float-left float-md-right">
+                                                                        <li class="digits"><i
+                                                                                    class="icofont icofont-thumbs-up"></i>02
+                                                                            Hits
+                                                                        </li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -114,10 +120,11 @@
                                             </form>
                                             <div class="btn-showcase">
                                                 <button form="add-comment-form-${post_index}"
-                                                        class="btn btn-primary btn-pill" type="submit">Post
+                                                        class="btn btn-pill" style="background: orange" type="submit">
+                                                    Post
                                                 </button>
                                                 <input form="add-comment-form-${post_index}"
-                                                       class="btn btn-light btn-pill" type="reset" value="Discard">
+                                                       class="btn  btn-pill" type="reset" value="Discard">
                                             </div>
                                         </div>
                                     </#if>
@@ -125,7 +132,7 @@
                             </div>
                         </#list>
                     <#else>
-                        <p>You have no access to the posts</p>
+                        <p>You have no access to posts</p>
                     </#if>
                 </div>
             </div>

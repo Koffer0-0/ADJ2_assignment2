@@ -3,9 +3,9 @@ package com.example.controllers;
 
 import com.example.dto.PostCommentDto;
 import com.example.dto.PostDto;
-import com.example.models.User;
-import com.example.models.Post;
-import com.example.models.VisibilityEnum;
+import com.example.entites.Post;
+import com.example.entites.User;
+import com.example.entites.VisibilityEnum;
 import com.example.services.PostCommentService;
 import com.example.services.PostService;
 import com.example.services.UserService;
@@ -29,11 +29,10 @@ import java.util.UUID;
 @Log4j2
 public class AccountPageController {
 
+    static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
     private final UserService userService;
     private final PostService postService;
     private final PostCommentService commentService;
-
-    static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 
     public AccountPageController(UserService userService, PostService postService, PostCommentService commentService) {
         this.userService = userService;
@@ -54,13 +53,13 @@ public class AccountPageController {
     }
 
     @GetMapping("/add-post")
-    public String addPost(){
+    public String addPost() {
         return "add-post";
     }
 
     @PreAuthorize("hasRole('USERS')")
     @GetMapping("/users")
-    public String users(Map<String, Object> model, Principal principal){
+    public String users(Map<String, Object> model, Principal principal) {
         User user = userService.findUserByUsername(principal.getName());
         model.put("friends", user.getFriends());
         return "users";
@@ -85,8 +84,7 @@ public class AccountPageController {
             Collection<Post> posts = postService.findAllPostsOf(username);
             model.put("posts", posts);
             return "blog_my";
-        }
-        else {
+        } else {
             VisibilityEnum accessLevel = userService.determineAccessLevel(username, principal);
             if (user.getPageVisibility().ordinal() >= accessLevel.ordinal()) {
                 Collection<Post> posts = postService.findPosts(username, principal);
@@ -102,7 +100,7 @@ public class AccountPageController {
 
     @PreAuthorize("hasRole('USERS')")
     @PostMapping("/findUsers")
-    public String findUsers(@RequestParam String username, Map<String, Object> model){
+    public String findUsers(@RequestParam String username, Map<String, Object> model) {
         List<User> users = userService.findUsers(username);
         model.put("users", users);
         return "index";

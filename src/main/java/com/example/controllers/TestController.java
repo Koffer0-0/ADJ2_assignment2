@@ -10,7 +10,7 @@ import java.util.Map;
 public class TestController {
 
     @GetMapping("/getJson")
-    public Map<String, String> getJson(){
+    public Map<String, String> getJson() {
         HashMap<String, String> map = new HashMap<>();
         map.put("key", "value");
         map.put("foo", "bar");

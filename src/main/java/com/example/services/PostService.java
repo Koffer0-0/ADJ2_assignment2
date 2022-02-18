@@ -1,10 +1,10 @@
 package com.example.services;
 
-import com.example.repositories.PostRepository;
 import com.example.dto.PostDto;
-import com.example.models.User;
-import com.example.models.Post;
-import com.example.models.VisibilityEnum;
+import com.example.entites.Post;
+import com.example.entites.User;
+import com.example.entites.VisibilityEnum;
+import com.example.repositories.PostRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -47,7 +47,7 @@ public class PostService {
      * @param username of the user
      * @return all posts of the user
      */
-    public  List<Post> findAllPostsOf(String username) {
+    public List<Post> findAllPostsOf(String username) {
         return postRepository.findPostsByPostAuthorUsername(username);
     }
 
@@ -56,7 +56,7 @@ public class PostService {
     }
 
     /**
-     * @param username of the user whose posts we're trying to find
+     * @param username  of the user whose posts we're trying to find
      * @param principal current user
      * @return collection of posts with visibility in mind
      */

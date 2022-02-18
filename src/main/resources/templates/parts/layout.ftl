@@ -7,8 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="/images/favicon.png" type="image/x-icon">
         <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-        <title>Assignment 2</title>
-        <title>Assignment 2</title>
+        <title>Team app</title>
         <!-- Google font-->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
               rel="stylesheet">
@@ -39,41 +38,39 @@
     <!-- page-wrapper Start-->
     <div class="page-wrapper">
         <!-- Page Header Start-->
-        <div class="page-main-header">
+        <div class="page-main-header" style="background: #FFFFF0">
             <div class="main-header-right">
                 <div class="main-header-left text-center">
                     <div class="logo-wrapper"><a href="/"><img src="/images/logo/logo.png" alt=""></a></div>
                 </div>
                 <div class="mobile-sidebar">
                     <div class="media-body text-right switch-sm">
-                        <label class="switch ml-3">
-                            <i class="font-primary" id="sidebar-toggle" data-feather="align-center"></i></label>
+                        <label class="switch ml-3"><i class="font-primary" id="sidebar-toggle"
+                                                      data-feather="align-center"></i></label>
                     </div>
                 </div>
-                <div class="vertical-mobile-sidebar">
-                    <i class="fa fa-bars sidebar-bar">
-
-                    </i>
-                </div>
+                <div class="vertical-mobile-sidebar"><i class="fa fa-bars sidebar-bar"></i></div>
                 <div class="nav-right col pull-right right-menu">
                     <ul class="nav-menus">
                         <li></li>
-                        <li class="onhover-dropdown"><span class="media user-header">
-                        <img src="/images/dashboard/user.png" alt=""></span>
+                        <li class="onhover-dropdown"><span class="media user-header"><img class="img-fluid"
+                                                                                          src="/images/dashboard/user.png"
+                                                                                          alt=""></span>
                             <ul class="onhover-show-div profile-dropdown">
-                                <li class="gradient-primary">
+                                <li style="background: #FFE4C4	">
                                     <h5 class="f-w-600 mb-0">
-                                        ${(Session.SPRING_SECURITY_CONTEXT.authentication.principal.username)!"Not Loged"}
-                                    </h5><span>User</span>
+                                        ${(Session.SPRING_SECURITY_CONTEXT.authentication.principal.username)!"USER"}
+                                    </h5><span>Hi user</span>
                                 </li>
-                                <li><i data-feather="user"> </i><a href="/profile">Profile</a></li>
+                                <li><i data-feather="user"> </i><a style="color: orangered" href="/profile">Profile</a>
+                                </li>
                                 <#if (Session.SPRING_SECURITY_CONTEXT.authentication.principal.username)??>
                                     <li><i data-feather="logout"> </i>
-                                        <a href="/logout">Logout</a>
+                                        <a href="/logout" style="color: orangered">Logout</a>
                                     </li>
                                 <#else>
                                     <li><i data-feather="login"></i>
-                                        <a href="/login">Login</a>
+                                        <a href="/login" style="color: orangered">Login</a>
                                     </li>
                                 </#if>
                             </ul>
@@ -95,21 +92,17 @@
                     </div></script>
             </div>
         </div>
-        <!-- Page Header Ends-->
-        <!-- Page Body Start-->
         <div class="page-body-wrapper">
-            <!-- Page Sidebar Start-->
             <div class="iconsidebar-menu">
                 <div class="sidebar">
-                    <ul class="iconMenu-bar custom-scrollbar">
-                        <li><a class="bar-icons" href="javascript:void(0)">
-                                <!--img(src='/images/menu/home.png' alt='')--><i
-                                        class="pe-7s-home"></i><span>General    </span></a>
-                            <ul class="iconbar-mainmenu custom-scrollbar">
-                                <li class="iconbar-header">Dashboard</li>
-                                <li><a href="/">Blog</a></li>
-                                <li><a href="/add-post">Add blog</a></li>
-                                <li><a href="/users">Friends</a></li>
+                    <ul class="iconMenu-bar custom-scrollbar" style="background: #FFFFF0">
+                        <li><a class="bar-icons" href="javascript:void(0)" style="background: #FF8C00">
+                                <i class="pe-7s-home"></i><span>General    </span></a>
+                            <ul class="iconbar-mainmenu custom-scrollbar" style="background: #FFFFF0">
+                                <li class="iconbar-header" style="background: #FFFFF0 ; color: orange">Dashboard</li>
+                                <li style="color: #ff8c00"><a href="/" style="color: #ff8c00">Blog</a></li>
+                                <li style="color: #ff8c00"><a href="/add-post" style="color: #ff8c00">Add blog</a></li>
+                                <li style="color: #ff8c00"><a href="/users" style="color: #ff8c00">Friends</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -123,6 +116,7 @@
                         <div class="col-md-6 footer-copyright">
                             <p class="mb-0">Copyright 2022</p>
                         </div>
+
                     </div>
                 </div>
             </footer>
@@ -162,9 +156,6 @@
     <script src="/js/datepicker/date-picker/datepicker.en.js"></script>
     <script src="/js/datepicker/date-picker/datepicker.custom.js"></script>
     <script src="/js/chat-menu.js"></script>
-    <!-- Plugins JS Ends-->
-    <!-- login js-->
-    <!-- Plugin used-->
     </body>
     </html>
 

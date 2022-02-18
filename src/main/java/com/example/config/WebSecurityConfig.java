@@ -25,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/app-post").access("hasRole('USER')")
                 .antMatchers("/user/**", "/").permitAll()
-                .antMatchers("/pug/**","/css/**", "/js/*", "/images/**", "/ajax/**", "/json/**", "/scss/**", "/video/**", "/fonts/**", "/audio/**").permitAll()
+                .antMatchers("/pug/**", "/css/**", "/js/*", "/images/**", "/ajax/**", "/json/**", "/scss/**", "/video/**", "/fonts/**", "/audio/**").permitAll()
                 .anyRequest().authenticated().and().formLogin().loginPage("/login").defaultSuccessUrl("/", true).permitAll().and().logout().logoutUrl("/logout")
                 .logoutSuccessUrl("/registration").permitAll();
     }

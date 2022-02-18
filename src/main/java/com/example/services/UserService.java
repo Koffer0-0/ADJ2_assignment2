@@ -1,9 +1,9 @@
 package com.example.services;
 
-import com.example.repositories.UserRepository;
 import com.example.dto.UserDto;
-import com.example.models.User;
-import com.example.models.VisibilityEnum;
+import com.example.entites.User;
+import com.example.entites.VisibilityEnum;
+import com.example.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -17,22 +17,22 @@ import java.util.UUID;
 @Service("userService")
 public class UserService {
 
-    private final UserRepository userRepository;
     final PasswordEncoder passwordEncoder;
+    private final UserRepository userRepository;
 
-    public void saveUser(final UserDto userDto){
+    public void saveUser(final UserDto userDto) {
         User customerModel = addUser(userDto);
         userRepository.save(customerModel);
     }
 
-    public boolean isUserExist(final UserDto user){
+    public boolean isUserExist(final UserDto user) {
         User userFromDb = userRepository.findByUsername(user.getUsername());
-        if(userFromDb != null)
+        if (userFromDb != null)
             return passwordEncoder.matches(user.getPassword(), userFromDb.getPassword());
         return false;
     }
 
-    public List<User> findUsers(final String username){
+    public List<User> findUsers(final String username) {
         return userRepository.findUsersByUsername(username);
     }
 
@@ -44,7 +44,7 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
-    private User addUser(final UserDto userDto){
+    private User addUser(final UserDto userDto) {
         User user = new User();
         user.setUsername(userDto.getUsername());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
@@ -70,8 +70,7 @@ public class UserService {
         VisibilityEnum accessLevel;
         if (isPageOwner) {
             accessLevel = VisibilityEnum.VISIBLE_TO_FRIENDS;
-        }
-        else if (principal == null) {
+        } else if (principal == null) {
             accessLevel = VisibilityEnum.VISIBLE_TO_ALL;
         } else {
             accessLevel = areFriends(username, principal.getName()) ? VisibilityEnum.VISIBLE_TO_FRIENDS : VisibilityEnum.VISIBLE_TO_USERS;

@@ -1,8 +1,10 @@
 package com.example.dto;
 
-import java.util.UUID;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import lombok.*;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor

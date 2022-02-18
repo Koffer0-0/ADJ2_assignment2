@@ -29,9 +29,8 @@ public class AuthController {
         this.passwordEncoder = passwordEncoder;
     }
 
-
     @GetMapping("/registration")
-    public String registration(){
+    public String registration() {
         return "registration";
     }
 
@@ -44,21 +43,20 @@ public class AuthController {
     @PostMapping("/registration")
     public String userRegistration(UserDto user, Map<String, Object> model) {
         final boolean isUserExist = userService.isUserExist(user);
-        if(!isUserExist){
+        if (!isUserExist) {
             userService.saveUser(user);
             model.put("message", "User registration successful");
             return "login";
-        }
-        else{
+        } else {
             model.put("message", "User exist");
             return "registration";
         }
     }
 
-    @GetMapping(value="/logout")
-    public String logoutPage (HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @GetMapping(value = "/logout")
+    public String logoutPage(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null){
+        if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         return "redirect:/login?logout";

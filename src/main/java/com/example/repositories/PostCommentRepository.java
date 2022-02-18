@@ -1,6 +1,6 @@
 package com.example.repositories;
 
-import com.example.models.PostComment;
+import com.example.entites.PostComment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
